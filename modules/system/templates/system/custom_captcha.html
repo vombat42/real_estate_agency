@@ -1,0 +1,35 @@
+{% load i18n %}
+{% load static %}
+{% spaceless %}
+<div class="form-group">
+  <div class="form-group">
+    <div class="input-group mb-3">
+<!--      <button id='js-captcha-refresh'>Обновить картинку</button>-->
+      <img src="{% static 'img/refresh.png' %}" id='js-captcha-refresh' height="50px">
+      <div class="input-group-prepend">
+        {% if audio %}
+          <a title="{% trans 'Play CAPTCHA as audio file' %}" href="{{ audio }}"> audio </a>
+        {% endif %}
+        <label class="control-label">{{ label }}</label>
+        <img src="{{ image }}" alt="captcha" class="captcha" height="50"/>
+      </div>
+      {% include "django/forms/widgets/multiwidget.html" %}
+        <script type="text/javascript">
+        document.getElementById('js-captcha-refresh').addEventListener('click', function () {
+            fetch("/captcha/refresh/", {
+                method: "GET",
+                headers: {"X-Requested-With": "XMLHttpRequest"},
+                credentials: "same-origin"
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('.captcha').src = data['image_url'];
+                document.getElementById('id_captcha_0').value = data['key']
+            });
+        });
+        </script>
+    </div>
+  </div>
+</div>
+
+{% endspaceless %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ error_message }} | <a href="{% url 'home' %}"><strong>Вернуться на главную</strong></a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</body>
+</html>

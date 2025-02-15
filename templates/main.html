@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    {% if title %}
+      <title>{{ title }}</title>
+    {% else %}
+      <title>Без заголовка</title>
+    {% endif %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

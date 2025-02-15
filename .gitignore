@@ -1,0 +1,21 @@
+# Django stuff:
+secret.py
+debug_toolbar_settings.py
+
+/static/*
+/static/
+/media/*
+/media/
+
+# Gunicorn
+gunicorn.sh
+gunicorn_config.conf
+
+# Environments
+.venv
+.idea
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
