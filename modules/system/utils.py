@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 
-from rieltor import settings
+from real_estate_agency import settings
 
 
 def get_client_ip(request):

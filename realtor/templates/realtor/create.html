@@ -1,0 +1,167 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<div class="form-title">{{title}}</div>
+<div class="form-wrapper">
+    <form method="post" enctype="multipart/form-data" class="form-box">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <div class="form-char">
+                <label for="{{ form.name.id_for_label }}" class="form-label">{{ form.name.label }}</label>
+                {{ form.name }}
+            </div>
+            <div class="form-list">
+                <label for="{{ form.operation.id_for_label }}" class="form-label">{{ form.operation.label }}</label>
+                {{ form.operation }}
+            </div>
+            <div class="form-list">
+                <label for="{{ form.category.id_for_label }}" class="form-label">{{ form.category.label }}</label>
+                {{ form.category }}
+            </div>
+            <div class="form-list">
+                <label for="{{ form.type.id_for_label }}" class="form-label">{{ form.type.label }}</label>
+                {{ form.type }}
+            </div> 
+        </div>
+
+        <div class="form-group">
+            <div class="form-list">
+                <label for="{{ form.city.id_for_label }}" class="form-label">{{ form.city.label }}</label>
+                {{ form.city }}
+            </div>
+            <div class="form-list">
+                <label for="{{ form.district.id_for_label }}" class="form-label">{{ form.district.label }}</label>
+                {{ form.district }}
+            </div>
+            <div class="form-char">
+                <label for="{{ form.landmarks.id_for_label }}" class="form-label">{{ form.landmarks.label }}</label>
+                {{ form.landmarks }}
+            </div>            
+            <div class="form-char">
+                <label for="{{ form.street.id_for_label }}" class="form-label">{{ form.street.label }}</label>
+                {{ form.street }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.house.id_for_label }}" class="form-label">{{ form.house.label }}</label>
+                {{ form.house }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.apartment.id_for_label }}" class="form-label">{{ form.apartment.label }}</label>
+                {{ form.apartment }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-number">
+                <label for="{{ form.number_floors.id_for_label }}" class="form-label">{{ form.number_floors.label }}</label>
+                {{ form.number_floors }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.floor.id_for_label }}" class="form-label">{{ form.floor.label }}</label>
+                {{ form.floor }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.number_rooms.id_for_label }}" class="form-label">{{ form.number_rooms.label }}</label>
+                {{ form.number_rooms }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.total_area.id_for_label }}" class="form-label">{{ form.total_area.label }}, м<sup>2</sup></label>
+                {{ form.total_area }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.living_area.id_for_label }}" class="form-label">{{ form.living_area.label }}, м<sup>2</sup></label>
+                {{ form.living_area }}
+            </div>
+            <div class="form-number">
+                <label for="{{ form.kitchen_area.id_for_label }}" class="form-label">{{ form.kitchen_area.label }}, м<sup>2</sup></label>
+                {{ form.kitchen_area }}
+            </div>
+            <div class="form-list">
+                <label for="{{ form.bathroom.id_for_label }}" class="form-label">{{ form.bathroom.label }}</label>
+                {{ form.bathroom }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-text">
+                <label for="{{ form.description.id_for_label }}" class="form-label">{{ form.description.label }}</label>
+                <div>{{ form.description }}</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="form-char">
+                <label for="{{ form.owner_name.id_for_label }}" class="form-label">{{ form.owner_name.label }}</label>
+                {{ form.owner_name }}
+            </div>
+            <div class="form-char">
+                <label for="{{ form.phone1.id_for_label }}" class="form-label">{{ form.phone1.label }}</label>
+                {{ form.phone1 }}
+            </div>
+            <div class="form-char">
+                <label for="{{ form.phone2.id_for_label }}" class="form-label">{{ form.phone2.label }}</label>
+                {{ form.phone2 }}
+            </div>
+            <div class="form-char">
+                <label for="{{ form.phone3.id_for_label }}" class="form-label">{{ form.phone3.label }}</label>
+                {{ form.phone3 }}
+            </div>
+            <div class="form-char">
+                <label for="{{ form.telegram.id_for_label }}" class="form-label">{{ form.telegram.label }}</label>
+                {{ form.telegram }}
+            </div>
+            <div class="form-char">
+                <label for="{{ form.vk.id_for_label }}" class="form-label">{{ form.vk.label }}</label>
+                {{ form.vk }}
+            </div>
+        </div>
+
+
+        <div class="form-list">
+            <label for="{{ form.status.id_for_label }}" class="form-label">{{ form.status.label }}</label>
+            {{ form.status }}
+        </div>
+    </form>
+
+    <div class="form-submit-box">
+        <button type="submit" class="form-submit-button">Сохранить объект</button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'realtor/js/form.js' %}"></script>
+{% endblock %}
+
+
+<!--    #       'name',
+        #       'category',
+        #       'type',
+        #       'operation',
+        #       'status',
+        #       'description',
+        #       'floor',
+        #       'number_rooms',
+        #       'number_floors',
+        #       'total_area',
+        #       'living_area',
+        #       'kitchen_area',
+        #     'bathroom',
+        #       'city',
+        #       'district',
+        #       'street',
+        #       'house',
+        #       'apartment',
+        #       'landmarks',
+
+            #     'owner_name',
+            #     'phone1',
+            #     'phone2',
+            #     'phone3',
+            #     'telegram',
+            #     'vk',
+        #     'slug',
+        #     'images',
+-->

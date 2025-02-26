@@ -8,11 +8,11 @@
     {% else %}
       <title>Без заголовка</title>
     {% endif %}
-    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'realtor/css/styles.css' %}" type="text/css" rel="stylesheet">
 </head>
 <body>
-    {% include 'header.html' %}
+    {% include './header.html' %}
     {% block content %}{% endblock %}
-<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    {% block script %}{% endblock %}
 </body>
 </html>

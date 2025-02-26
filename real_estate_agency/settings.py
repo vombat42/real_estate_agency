@@ -25,18 +25,6 @@ ALLOWED_HOSTS = my_allowed_hosts
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'captcha',
-    # my apps:
-    'modules.system.apps.SystemConfig',
-    'modules.services',
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -46,6 +34,23 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # extra apps:
+    'captcha',
+    'smart_selects',
+    'django_extensions',
+    'phonenumber_field',
+    # my apps:
+    'realtor.apps.RealtorConfig',
+    'modules.system.apps.SystemConfig',
+    'modules.services',
 ]
 
 ROOT_URLCONF = 'real_estate_agency.urls'
@@ -147,7 +152,7 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'realtor:home'
 LOGIN_URL = 'system:login'
 
 # AUTH_USER_MODEL = 'users.User'

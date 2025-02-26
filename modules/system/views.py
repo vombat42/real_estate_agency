@@ -11,7 +11,7 @@ from django.utils.encoding import force_bytes
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 
-from rieltor.secret import my_site
+from real_estate_agency.secret import my_site
 from ..services.mixins import UserIsNotAuthenticated
 from .utils import send_contact_email_message, get_client_ip
 from .models import Profile, Feedback
